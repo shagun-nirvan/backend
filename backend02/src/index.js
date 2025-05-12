@@ -1,16 +1,17 @@
 //require('dotenv').config({path: './env'})
 import express from 'express'
-const app = express()
+// const app = express()
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import { DB_NAME } from './constants.js';
 import connectDB from './db/index.js';
+import { app } from './app.js';
 
-dotenv.config({
-    path:'./env'
-})
+dotenv.config({ path: './.env' });
 
 
+
+console.log("✅ MONGO_URI = ", process.env.MONGO_URI);
 
 connectDB()
 .then(() => {
@@ -23,8 +24,8 @@ connectDB()
     console.log("MONGODB connection failed !!!", err);
     
 })
-/*
 
+/*
 
 ;(async () =>{
     try {
@@ -44,4 +45,5 @@ connectDB()
         
     }
 })()
-    */
+    
+  */  
